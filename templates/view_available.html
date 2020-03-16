@@ -1,0 +1,39 @@
+{% extends "user.html" %}
+{% block content %}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  color: black;
+}
+
+</style>
+
+<center>
+<table class="table-striped" style="width:900px;">
+  <tr>
+    <th>Email</th>
+  </tr>
+
+
+  {% for schedule in lis %}
+  <tr>
+
+
+    <td>{{schedule}}</td>
+
+
+  </tr>
+  {% endfor %}
+
+</table>
+</center>
+{% endblock %}

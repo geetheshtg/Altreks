@@ -1,0 +1,43 @@
+{%extends "user.html"%}
+{%block content%}
+
+<div id="login">
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="" method="post">
+                      {{ form.hidden_tag() }}
+
+
+                        <!-- Examid -->
+                        <div class="form-group">
+                            {{ form.examid.label(class="text-info") }}
+                            {{ form.examid(class="form-control") }}
+                        </div>
+                        
+                        <!-- Slot -->
+                        <div class="form-group">
+                            {{ form.slot.label(class="text-info") }}
+                            {{ form.slot(class="form-control") }}
+                        </div>
+
+                        <h3 class="text-center text-info">Change Availability:</h3>
+
+                        <div class="form-group">
+                            {{ form.availability(class="form-control browser-default custom-select mb-4")}}
+                        </div>
+
+                        <!-- Remember me and Submit-->
+                        <div class="form-group">
+                            {{ form.change(class="btn btn-info btn-md") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+<div id="login">
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form method="post" id="login-form" class="form" action="">
+                        {{ form.hidden_tag() }}
+                        <h3 class="text-center text-info" style="margin-bottom: 25px;">Sign Up</h3>
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            <div class = "container">
+                                {% for message in messages %}
+                                <div class = "alert alert-warning alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    {{message}}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        {% endwith %}
+
+                        <div class="form-row mb-4 text-info">
+                            <div class="form-group col">
+                                <!-- First name -->
+                                {{ form.firstname.label(class="text-info") }}
+                                {{ form.firstname(class="form-control") }}
+                            </div>
+                            <div class="form-group col">
+                                <!-- Last name -->
+                                {{ form.lastname.label(class="text-info") }}
+                                {{ form.lastname(class="form-control") }}
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            {{ form.email.label(class="text-info") }}
+                            {{ form.email(class="form-control") }}
+                        </div>
+
+                        <!-- Password and confirm_password-->
+                        <div class="form-group">
+                            {{ form.password.label(class="text-info") }}
+                            {{ form.password(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.confirm_password.label(class="text-info") }}
+                            {{ form.confirm_password(class="form-control") }}
+                        </div>
+
+                        <!-- Phone number -->
+                        <div class="form-group">
+                            {{ form.phone.label(class="text-info") }}
+                            {{ form.phone(class="form-control") }}
+                            <small id="defaultRegisterFormPhoneHelpBlock" class="text-info mb-4">
+                              Optional - for two step authentication
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                        <p class="text-info">By clicking <em>Register</em> you agree to our <a href="#termsofservice">terms of service</a>
+                        </div>
+
+                        <!-- Register-->
+                        <div class="form-group" style="margin-left: 205px;" >
+                            {{ form.register(class="btn btn-info btn-md") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

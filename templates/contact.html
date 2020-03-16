@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="login">
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="" method="post">
+                      {{ form.hidden_tag() }}
+
+                        <h3 class="text-center text-info" style="color: #7386D5;">Contact us</h3>
+
+                        <!-- Name -->
+                        <div class="form-group"  style="color: #7386D5;">
+                            {{ form.name.label(class="text-info") }}
+                            {{ form.name(class="form-control") }}
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group"  style="color: #7386D5;">
+                            {{ form.email.label(class="text-info") }}
+                            {{ form.email(class="form-control") }}
+                        </div>
+
+                        <div class="form-group"  style="color: #7386D5;">
+                            {{ form.feedback(class="form-control browser-default custom-select mb-4")}}
+                        </div>
+
+                        <div class="form-group text-info"  style="color: #7386D5;">
+                          {{ form.message(class = "form-control rounded-0", rows="3", placeholder="Message") }}
+                        </div>
+
+                        <div class="form-group" style="margin-left:20px;"  style="color: #7386D5;">
+                            {{ form.sendres(class="form-check-input") }}
+                            {{ form.sendres.label(class="text-info") }}
+                        </div>
+
+
+
+                        <div class="form-group" style="margin-left: 230px;"  style="color: #7386D5;">
+                            <input type="submit" id="reg"name="send" class="btn btn-info btn-md" value="send">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>s
+    </div>
+</div>
+
+{% endblock %}

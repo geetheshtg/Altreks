@@ -1,0 +1,69 @@
+{% extends "admin.html" %}
+{% block content %}
+  <div id="adds">
+      <div class="container">
+          <div id="login-row" class="row justify-content-center align-items-center">
+              <div id="login-column" class="col-md-6">
+                  <div id="login-box" class="col-md-12">
+                      <form method="post" id="login-form" class="form" action="">
+                          {{ form.hidden_tag() }}
+                          <h3 class="text-center text-info">Approve Request</h3>
+
+                          <!-- Emailf -->
+                          <div class="form-group">
+                              {{ form.emailf.label(class="text-info") }}
+                              {{ form.emailf(class="form-control") }}
+                          </div>
+
+                          <!-- Emailt -->
+                          <div class="form-group">
+                              {{ form.emailt.label(class="text-info") }}
+                              {{ form.emailt(class="form-control") }}
+                          </div>
+
+                          <!-- Examid -->
+                          <div class="form-group">
+                              {{ form.examid.label(class="text-info") }}
+                              {{ form.examid(class="form-control") }}
+                          </div>
+
+                          <!-- Date -->
+                          <div class="form-group">
+                              {{ form.date.label(class="text-info") }}
+                              <p>format:hr-min</p>
+                              {{ form.date(class="form-control") }}
+                          </div>
+
+                          <!-- Time -->
+                          <div class="form-group">
+                              {{ form.time.label(class="text-info") }}
+                              <p>format:hr-min</p>
+                              {{ form.time(class="form-control") }}
+                          </div>
+
+                          <!-- Slot -->
+                          <div class="form-group">
+                              {{ form.slot.label(class="text-info") }}
+                              {{ form.slot(class="form-control") }}
+                          </div>
+
+                          <!-- approval -->
+                          <div class="form-group">
+                              {{ form.approval.label(class="text-info") }}
+                              {{ form.approval(class="form-control") }}
+                          </div>
+
+                          <!-- Submit-->
+                          <div class="form-group" style="margin-left: 205px;">
+                              <br>
+                              {{ form.submit(class="btn btn-info btn-md") }}
+
+                          </div>
+
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}

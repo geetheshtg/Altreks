@@ -1,0 +1,44 @@
+{% extends "user.html" %}
+{% block content %}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  color: black;
+}
+
+</style>
+
+<center>
+<table class="table-striped" style="width:900px;">
+  <tr>
+    <th>Email</th>
+    <th>ExamID</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Slot</th>
+    <th>Approved</th>
+  </tr>
+
+
+  {% for schedule in lis %}
+  <tr>
+    {% for attr in schedule %}
+
+    <td>{{attr}}</td>
+
+    {% endfor %}
+  </tr>
+  {% endfor %}
+
+</table>
+</center>
+{% endblock %}

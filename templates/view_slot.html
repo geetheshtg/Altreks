@@ -1,0 +1,27 @@
+{% extends "user.html" %}
+{% block content %}
+  <div id="login">
+      <div class="container">
+          <div id="login-row" class="row justify-content-center align-items-center">
+              <div id="login-column" class="col-md-6">
+                  <div id="login-box" class="col-md-12">
+                      <form method="post" id="login-form" class="form" action="">
+                          {{ form.hidden_tag() }}
+                          <h3 class="text-center text-info">View schedule</h3>
+
+                          <!-- Email -->
+                          <div class="form-group">
+                              {{ form.email.label(class="text-info") }}
+                              {{ form.email(class="form-control") }}
+                          </div>
+                              {{ form.submit(class="btn btn-info btn-md") }}
+
+                          </div>
+
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}
